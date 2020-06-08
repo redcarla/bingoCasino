@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CasinoGame2
@@ -9,26 +10,64 @@ namespace CasinoGame2
         private const int MaxHandSize = 14;
         private Card[] hand;
         private int total;
+        private bool busted = false;
+        private bool winner = false;
 
         public Hand()
         {
             hand = new Card[MaxHandSize];
         }
 
-        public int Size
+
+ //       public void addCards(Card[] cards)
+ //       {
+ //           for (int i = 0; i < hand.Length; i++)
+ //               hand[i] = cards[i];
+ //           sort();
+ //           totalValueOfTheHand();
+   //         checkIfBusted(totalValueOfTheHand());
+  //      }
+
+        public void addOneCard(Card card)
         {
-            get
+
+            int handSize = hand.Length;
+                hand[handSize+1] = card;
+                sort();
+                totalValueOfTheHand();
+                checkIfBusted(totalValueOfTheHand());
+        }
+        public void sort()
+        {
+            hand = hand.OrderBy(card => (int)card.rank).ToArray();
+        }
+
+        public int totalValueOfTheHand()
+        {
+            int totalValue = 0;
+            foreach (Card c in hand)
             {
-                return hand.Length;
+                totalValue += (int)c.rank;
             }
+            return totalValue;
         }
-
-        public void addCards(Card[] cards)
+        public bool checkIfBusted(int value)
         {
-            for (int i = 0; i < hand.Length; i++)
-                hand[i] = cards[i];
 
+            if (value > 21)
+            {
+                busted = true;
+                Console.WriteLine("you have more than 21");
+                return busted;
+            }
+            if (value == 21)
+            {
+              return  winner = true;
+              Console.WriteLine("you have  21");
+            }
+            return busted;
         }
+
 
 
 

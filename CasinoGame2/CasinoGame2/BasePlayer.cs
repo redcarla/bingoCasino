@@ -4,7 +4,11 @@ using System.Text;
 
 namespace CasinoGame2
 {
-    class BasePlayer
+    interface BasePlayer
     {
+        public static bool busted;
+
+       public void currentHand(Hand hand);
+
     }
 }

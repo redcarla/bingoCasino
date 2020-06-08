@@ -10,7 +10,7 @@ namespace CasinoGame2
         static Random random = new Random();
 
         private const int MaxDeckSize = 52;
-        private Card[] deck;
+        public Card[] deck;
 
         public Deck()
         {
@@ -44,8 +44,8 @@ namespace CasinoGame2
 
         public Card deal()
         {
-            int index = random.Next(0, MaxDeckSize - 1);
-            return deck[index];
+           //int index = random.Next(0, MaxDeckSize - 1);
+            return deck[0];
         }
 
     }
