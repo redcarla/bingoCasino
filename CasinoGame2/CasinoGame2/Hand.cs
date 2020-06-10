@@ -30,12 +30,11 @@ namespace CasinoGame2
 
         public void addOneCard(Card card)
         {
-
             int handSize = hand.Length;
                 hand[handSize+1] = card;
                 sort();
-                totalValueOfTheHand();
-                checkIfBusted(totalValueOfTheHand());
+ //               totalValueOfTheHand();
+ //               checkIfBusted(totalValueOfTheHand());
         }
         public void sort()
         {
@@ -51,26 +50,6 @@ namespace CasinoGame2
             }
             return totalValue;
         }
-        public bool checkIfBusted(int value)
-        {
-
-            if (value > 21)
-            {
-                busted = true;
-                Console.WriteLine("you have more than 21");
-                return busted;
-            }
-            if (value == 21)
-            {
-              return  winner = true;
-              Console.WriteLine("you have  21");
-            }
-            return busted;
-        }
-
-
-
-
-
+      
     }
 }

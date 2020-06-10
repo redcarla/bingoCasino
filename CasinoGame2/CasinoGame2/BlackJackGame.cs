@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 
@@ -11,23 +12,24 @@ namespace CasinoGame2
         private Dealer dealer = new Dealer();
         private BlackJackPlayer player;
 
-        // ToDo : fix the inheriting between User and BlackJackPlayer
+        
         public BlackJackGame(string name, double money) 
         {
-            deck.randomizeShuffle();
+           
             this.player=new BlackJackPlayer(name,money);
           
         }
-        public void dealFirsRound()
+        public void startFirsRound(int betMoney)
         {
+            player.betMoney(betMoney);
             deal();
             dealer.showHand().totalValueOfTheHand();
         }
 
-        public void dealtheSecoundRound()
-        {
-            deal();
-        }
+    //    public void dealtheSecoundRound()
+  //      {
+   //         deal();
+   //     }
 
         public void deal()
         {
@@ -36,6 +38,29 @@ namespace CasinoGame2
             numbersList.RemoveAt(0);
             player.addOneCard(deck.deal());
             numbersList.RemoveAt(0);
+            checkIfBusted(player.showHand().totalValueOfTheHand());
+        }
+        public bool checkIfBusted(int value)
+        {
+            var bustted = false;
+            if (value > 21)
+            {
+                player.money -= player.moneyBet;
+                Console.WriteLine("you have more than 21");
+                return bustted;
+            }
+            if (value == 21)
+            {
+                player.money = player.moneyBet*2;
+                checkIfWin();
+            }
+            return bustted;
+            }
+
+        public bool checkIfWin()
+        {
+            var winner = true;
+            return winner;
         }
 
         public void stay()
@@ -51,9 +76,37 @@ namespace CasinoGame2
             }
             else
             {
-  //              Comparer(dealer.showHand().totalValueOfTheHand(), player.showHand().totalValueOfTheHand());
+                if (checkIfBusted(dealer.showHand().totalValueOfTheHand()))
+                {
+                    Compare(dealer.showHand().totalValueOfTheHand(), player.showHand().totalValueOfTheHand());
+                }
+                else
+                {
+                    player.money += player.moneyBet * 1.5;
+                }
+
             }
         }
+
+        public void Compare(int x, int y)
+        {
+            //returns 0 if equal
+            //returns 1 if x > y
+            //returns -1 if x < y
+            int temp = ((x - y) >> 0x1F) | (int) ((uint) (-(x - y)) >> 0x1F);
+            switch (temp)
+            {
+                case 1:
+                    player.money -= player.moneyBet;
+                    break;
+                case -1:
+                    player.money += player.moneyBet*1.5;
+                    break;
+            }
+                
+        }
+
+
 
 
 

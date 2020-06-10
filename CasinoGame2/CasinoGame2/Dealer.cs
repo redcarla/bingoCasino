@@ -17,22 +17,17 @@ namespace CasinoGame2
         {
             return this.hand;
         }
+
         public void addOneCard(Card card)
         {
             hand.addOneCard(card);
-
-            checkifBusted();
         }
+
         public void hit(Card card)
         {
             hand.addOneCard(card);
         }
 
-        protected bool checkifBusted()
-        {
-            busted = hand.checkIfBusted(hand.totalValueOfTheHand());
-            return busted;
-        }
 
     }
 }

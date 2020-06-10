@@ -8,16 +8,13 @@ namespace CasinoGame2
     {
         public Rank rank { get; private set; }
         public Suit suit { get; private set; }
-        private String avatar;
+        public String avatar { get; set; }
 
         public Card(Suit suit, Rank rank)
         {
             this.suit = suit;
             this.rank = rank;
             this.avatar = suit.ToString() + rank.ToString();
-
-
         }
-
     }
 }

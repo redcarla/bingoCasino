@@ -6,12 +6,12 @@ namespace CasinoGame2
 {
     class User
     {
-        private string name   // property
+        protected string name   // property
         {
             get { return name; }   // get method
             set { name = value; }  // set method
         }
-        private double money
+        public double money
         {
             get { return money; }   // get method
             set { money = value; }  // set method
@@ -23,6 +23,33 @@ namespace CasinoGame2
             this.money = money;
         }
 
+        public Hand showHand()
+        {
+            return null;
+        }
+        public void addOneCard(Card card)
+        {
+            
+        }
+
+        public void hit(Card card)
+        {
+          
+        }
+
+        public bool stand()
+        {
+            return false;
+        }
+
+        public void betMoney(double betMoney)
+        {
+         
+        }
+        private bool checkIfYouHaveMoney(double betMoney)
+        {
+            return false;
+        }
         protected User()
         {
             throw new NotImplementedException();

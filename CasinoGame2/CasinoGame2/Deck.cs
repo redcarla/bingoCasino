@@ -29,17 +29,14 @@ namespace CasinoGame2
                     temp[index++] = new Card(suit, rank);
             }
 
+            randomizeShuffle();
             return temp;
         }
 
 
-        public Card[] randomizeShuffle()
+        private void randomizeShuffle()
         {
-            Card[] myArray = GetDeck();
-
-            Card[] myRandomArray = myArray.OrderBy(x => random.Next()).ToArray();
-
-            return myRandomArray;
+            this.deck.OrderBy(x => random.Next()).ToArray();
         }
 
         public Card deal()
