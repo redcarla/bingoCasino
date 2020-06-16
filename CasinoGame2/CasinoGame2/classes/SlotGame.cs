@@ -11,9 +11,7 @@ namespace CasinoGame2
 
         public SlotGame(string name, double money)
         {
-
             this.player = new BlackJackPlayer(name, money);
-
         }
         public void play(int bet)
         {
