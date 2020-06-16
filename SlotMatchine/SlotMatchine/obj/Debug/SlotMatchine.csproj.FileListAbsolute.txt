@@ -1,0 +1,10 @@
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\bin\Debug\SlotMatchine.exe.config
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\bin\Debug\SlotMatchine.exe
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\bin\Debug\SlotMatchine.pdb
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\obj\Debug\SlotMatchine.csprojAssemblyReference.cache
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\obj\Debug\SlotMatchine.Form1.resources
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\obj\Debug\SlotMatchine.Properties.Resources.resources
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\obj\Debug\SlotMatchine.csproj.GenerateResource.cache
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\obj\Debug\SlotMatchine.csproj.CoreCompileInputs.cache
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\obj\Debug\SlotMatchine.exe
+C:\Users\co_mo\source\repos\SlotMatchine\SlotMatchine\obj\Debug\SlotMatchine.pdb
